@@ -13,7 +13,6 @@ const docClient = new DynamoDBClient({ regions: process.env.AWS_REGION });
 
 
 exports.getItems = async (req, res) => {
-  // You should change the response below.
   const params = {
     TableName: process.env.aws_items_table_name,
   };
