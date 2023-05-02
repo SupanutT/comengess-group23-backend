@@ -4,16 +4,13 @@ const { v4: uuidv4 } = require("uuid");
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const {
   PutCommand,
-  DeleteCommand,
-  ScanCommand,
-  UpdateCommand
+  ScanCommand
 } = require("@aws-sdk/lib-dynamodb");
 
 const docClient = new DynamoDBClient({ regions: process.env.AWS_REGION });
 
 
 exports.getItems = async (req, res) => {
-  // You should change the response below.
   const params = {
     TableName: process.env.aws_chats_table_name,
   };
